@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::check()){
+		return "the user is logged in";
+	}
+	
+	//return view('welcome');
 });
 
 Route::auth();
